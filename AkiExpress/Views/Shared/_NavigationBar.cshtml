@@ -1,0 +1,23 @@
+﻿@model MainViewModel
+
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a asp-action="Index">Home</a></li>
+
+                @foreach (var item in Model.Categories)
+                {
+                    <li><a asp-controller="Home" asp-action="Category" asp-route-name="@item.Name" asp-route-id="@item.Id">@item.Name</a></li>
+                }
+
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
